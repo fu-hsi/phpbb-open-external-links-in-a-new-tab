@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml-stylesheet type="text/xsl" href="1.2.6/modx.prosilver.en.xsl"?>
+<!--For security purposes, please check: https
+://www.phpbb.com/mods/ for the latest version of this MOD. Although MODs are checked before being allowed in the MODs Database there is no guarantee that there are no security problems within the MOD. No support will be given for MODs not found within the MODs Database which can be found at https://www.phpbb.com/mods/-->
+<mod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://www.phpbb.com/mods/xml/modx-1.2.6.xsd">
+	<header>
+		<license>http://opensource.org/licenses/gpl-license.php GNU General Public License v2</license>
+
+		<title lang="en">Open external links in a new tab</title>
+		<title lang="pl">Otwiera zewnętrzne linki w nowej zakładce</title>
+    
+    <description lang="en">Open external links (a.postlink) in a new tab.</description>
+    <description lang="pl">Otwiera zewnętrzne linki (a.postlink) nowej zakładce.</description>
+
+		<github><![CDATA[https://github.com/fu-hsi/phpbb-selective-quoting]]></github>
+
+		<author-group>
+			<author>
+				<realname>Mariusz Kacki</realname>
+				<username phpbbcom="no">Fu-Hsi</username>
+				<homepage>https://github.com/fu-hsi/phpbb-open-external-links-in-a-new-tab</homepage>
+				<contributions-group>
+					<contributions status="current" from="2015-02-03" position="Developer"/>
+				</contributions-group>
+			</author>
+		</author-group>
+
+		<mod-version>1.0.0</mod-version>
+
+		<installation>
+			<level>easy</level>
+			<time>60</time>
+			<target-version>3.0.12</target-version>
+		</installation>
+
+		<history>
+			<entry>
+				<date>2015-02-03</date>
+				<rev-version>1.0.0</rev-version>
+				<changelog lang="en">
+					<change>First release.</change>
+				</changelog>
+				<changelog lang="pl">
+					<change>Pierwsze wydanie.</change>
+				</changelog>
+			</entry>
+		</history>
+
+	</header>
+
+	<action-group>
+
+		<copy>
+			<file from="phpbb-open-external-links-in-a-new-tab.min.js" to="styles/phpbb-open-external-links-in-a-new-tab.js" />
+			<file from="phpbb-open-external-links-in-a-new-tab.min.js" to="styles/phpbb-open-external-links-in-a-new-tab.min.js" />
+		</copy>  
+  
+		<open src="styles/prosilver/template/overall_footer.html">
+			<edit>
+				<find><![CDATA[</body>]]></find>
+				<action type="before-add"><![CDATA[<script type="text/javascript" src="/styles/phpbb-open-external-links-in-a-new-tab.min.js"></script>]]></action>
+			</edit>
+		</open>      
+    
+		<open src="styles/subsilver2/template/overall_footer.html">
+			<edit>
+				<find><![CDATA[</body>]]></find>
+				<action type="before-add"><![CDATA[<script type="text/javascript" src="/styles/phpbb-open-external-links-in-a-new-tab.min.js"></script>]]></action>
+			</edit>
+		</open>    
+
+	</action-group>
+
+</mod>

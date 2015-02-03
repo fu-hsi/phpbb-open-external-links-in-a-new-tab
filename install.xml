@@ -51,7 +51,6 @@
 	<action-group>
 
 		<copy>
-			<file from="phpbb-open-external-links-in-a-new-tab.min.js" to="styles/phpbb-open-external-links-in-a-new-tab.js" />
 			<file from="phpbb-open-external-links-in-a-new-tab.min.js" to="styles/phpbb-open-external-links-in-a-new-tab.min.js" />
 		</copy>  
   

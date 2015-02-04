@@ -2,7 +2,7 @@
 
     var clickHandler = function(e) {
 	e.preventDefault();
-	w.open(e.target.href);
+	w.open(e.currentTarget.href);
     }, links = d.querySelectorAll("a.postlink"), length = links.length;
 
     while (length--) {
